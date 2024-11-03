@@ -7,3 +7,7 @@ def index():
     nome = "Bárbara"
     dados = {"profissao": "Técnica", "Idade":29}
     return render_template('index.html', nome=nome, dados=dados)
+
+@app.route('/contato')
+def contato():
+    return render_template('contato.html')
