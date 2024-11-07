@@ -1,0 +1,11 @@
+    {% extends 'base.html' %}
+
+    {% block conteudo %}
+    <h2>Hello {{nome}}</h2>
+    <p>
+        <img class="imgquadrada" src="{{url_for('static', filename='computador.png')}}">
+        Profissão: {{dados.profissao}} <br/>
+        Idade: {{dados.Idade}}
+    </p>
+
+    {% endblock %}

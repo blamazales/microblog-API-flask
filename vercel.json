@@ -1,4 +1,9 @@
 {
-   "builds":[{"src":"microblog.py", "use":"@vercel/python"}],
-   "routes":[{"src":"/(.*)","dest":"microblog.py"}]
-}
+    "version": 2,
+    "builds": [
+      { "src": "microblog.py", "use": "@vercel/python" }
+    ],
+    "routes": [
+      { "src": "/(.*)", "dest": "/microblog.py" }
+    ]
+  }
