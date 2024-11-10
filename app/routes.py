@@ -1,7 +1,8 @@
 from app import app
 from flask import render_template
 from flask import request
-import os
+from flask import flash
+from flask import redirect
 
 if __name__=='main':
     port = int(os.getenv('PORT'), '5000')
@@ -26,4 +27,9 @@ def login():
 def autenticar():
     usuario = request.args.get('usuario')
     senha = request.args.get('senha')
-    return "usuario: {usuario} e senha: {senha}".format(usuario,senha)
+    if usuario == 'admin' and senha ==  'senha123':
+        return "usuario: {} e senha: {}".format(usuario,senha)
+    else:
+        flash("Dados inválidos") 
+        flash("Login ou senha inválidos") 
+        return redirect('/login')
